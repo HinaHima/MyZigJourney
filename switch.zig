@@ -1,5 +1,9 @@
 const expect = @import("std").testing.expect;
 
+// Zig's switch works as both a statement and an expression. The types of all branches must coerce to the type which is being switched upon.
+// All possible values must have an associated branch - values cannot be left out. Cases cannot fall through to other branches.
+
+// An example of a switch statement. The else is required to satisfy the exhaustiveness of this switch.
 test "switch statement" {
     var x: i8 = 10;
     switch (x) {

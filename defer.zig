@@ -1,6 +1,7 @@
 const expect = @import("std").testing.expect;
 const print = @import("std").debug.print;
 
+// Defer is used to execute a statement while exiting the current block.
 test "defer" {
     var x: i16 = 5;
     {
@@ -32,3 +33,6 @@ test "defer test" {
     print("\n\nВыполнение функции\n", .{});
     try expect(true);
 }
+
+// Defer is useful to ensure that resources are cleaned up when they are no longer needed.
+// Instead of needing to remember to manually free up the resource, you can add a defer statement right next to the statement that allocates the resource.
