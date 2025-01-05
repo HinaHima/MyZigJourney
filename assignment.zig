@@ -14,3 +14,7 @@ pub fn main() void {
 // Constants and variables must have a value. If no known value can be given, the undefined value, which coerces to any type, may be used as long as a type annotation is provided.
 const a: i32 = undefined;
 var b: u32 = undefined;
+
+// However in Zig, using undefined like this is a bad idea as undefined works very differently.
+// In JavaScript, values can be checked for being undefined, whereas in Zig, an undefined value is impossible to detect.
+// Usage of undefined values is not safe. Zig's undefined is "undefined" as in "undefined behaviour", and should not be used as a stand-in for an optional.
